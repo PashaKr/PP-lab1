@@ -1,0 +1,46 @@
+{
+    "name": "Online Cinema",
+    "catalog": [
+        {
+            "title": "Drive",
+            "genre": "Criminal",
+            "duration": 100,
+            "description": "cool movie",
+            "release_year": 2011,
+            "director": {
+                "name": "Nicolas Winding Refn",
+                "birth_date": "29.09.1970",
+                "biography": "Director of the film Drive"
+            },
+            "actors": [
+                {
+                    "name": "Ryan Gosling",
+                    "birth_date": "10.03.2004",
+                    "biography": "Canadian actor"
+                }
+            ],
+            "comments": [
+                {
+                    "user": "Pashtet",
+                    "text": "Main character literally me",
+                    "date": "2024-11-03 18:40:25"
+                },
+                {
+                    "user": "Ne Pashtet",
+                    "text": "Boring",
+                    "date": "2024-11-03 18:40:25"
+                }
+            ]
+        }
+    ],
+    "users": [
+        {
+            "username": "Pashtet",
+            "email": "pasha7788hh@gmail.com",
+            "favorite_list": [
+                "Drive"
+            ],
+            "watchlist": []
+        }
+    ]
+}
