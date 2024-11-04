@@ -1,6 +1,5 @@
 import json
 import xml.etree.ElementTree as ET
-from datetime import datetime
 
 
 class Cinema:
@@ -127,39 +126,35 @@ class User:
 
 
 class Actor:
-    def __init__(self, name, birth_date, biography):
+    def __init__(self, name, biography):
         self.name = name
-        self.birth_date = birth_date
         self.biography = biography
 
     def to_dict(self):
         return {
             "name": self.name,
-            "birth_date": self.birth_date,
             "biography": self.biography
         }
 
     def to_xml(self):
-        actor_elem = ET.Element("Actor", name=self.name, birth_date=self.birth_date)
+        actor_elem = ET.Element("Actor", name=self.name)
         ET.SubElement(actor_elem, "Biography").text = self.biography
         return actor_elem
 
 
 class Director:
-    def __init__(self, name, birth_date, biography):
+    def __init__(self, name, biography):
         self.name = name
-        self.birth_date = birth_date
         self.biography = biography
 
     def to_dict(self):
         return {
             "name": self.name,
-            "birth_date": self.birth_date,
             "biography": self.biography
         }
 
     def to_xml(self):
-        director_elem = ET.Element("Director", name=self.name, birth_date=self.birth_date)
+        director_elem = ET.Element("Director", name=self.name)
         ET.SubElement(director_elem, "Biography").text = self.biography
         return director_elem
 
@@ -186,26 +181,24 @@ class Comment:
     def __init__(self, user, text):
         self.user = user
         self.text = text
-        self.date = datetime.now()
 
     def to_dict(self):
         return {
             "user": self.user.username,
-            "text": self.text,
-            "date": self.date.strftime("%Y-%m-%d %H:%M:%S")
+            "text": self.text
         }
 
     def to_xml(self):
-        comment_elem = ET.Element("Comment", user=self.user.username, date=self.date.strftime("%Y-%m-%d %H:%M:%S"))
+        comment_elem = ET.Element("Comment", user=self.user.username)
         comment_elem.text = self.text
         return comment_elem
 
 
 # Пример использования
 cinema = Cinema("Online Cinema")
-director1 = Director("Nicolas Winding Refn", "29.09.1970", "Director of the film Drive")
+director1 = Director("Nicolas Winding Refn", "Director of the film Drive")
 movie1 = Movie("Drive", "Criminal", 100, "cool movie", 2011, director1)
-actor1 = Actor("Ryan Gosling", "10.03.2004", "Canadian actor")
+actor1 = Actor("Ryan Gosling",  "Canadian actor")
 user1 = User("Pashtet", "pasha7788hh@gmail.com")
 user2 = User("Ne Pashtet", "NEpasha7788hh@gmail.com")
 
