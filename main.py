@@ -194,7 +194,6 @@ class Comment:
         return comment_elem
 
 
-# Пример использования
 cinema = Cinema("Online Cinema")
 director1 = Director("Nicolas Winding Refn", "Director of the film Drive")
 movie1 = Movie("Drive", "Criminal", 100, "cool movie", 2011, director1)
