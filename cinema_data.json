@@ -36,7 +36,17 @@
             "favorite_list": [
                 "Drive"
             ],
-            "watchlist": []
+            "watchlist": [
+                "Drive"
+            ]
+        },
+        {
+            "username": "Ne Pashtet",
+            "email": "NEpasha7788hh@gmail.com",
+            "favorite_list": [],
+            "watchlist": [
+                "Drive"
+            ]
         }
     ]
 }

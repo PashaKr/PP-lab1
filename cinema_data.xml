@@ -1,2 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Cinema name="Online Cinema"><Catalog><Movie title="Drive" genre="Criminal" duration="100" release_year="2011"><Description>cool movie</Description><Director name="Nicolas Winding Refn"><Biography>Director of the film Drive</Biography></Director><Actors><Actor name="Ryan Gosling"><Biography>Canadian actor</Biography></Actor></Actors><Comments><Comment user="Pashtet">Main character literally me</Comment><Comment user="Ne Pashtet">Boring</Comment></Comments></Movie></Catalog><Users><User username="Pashtet" email="pasha7788hh@gmail.com"><FavoriteList><Movie title="Drive" /></FavoriteList><Watchlist /></User></Users></Cinema>
+<Cinema name="Online Cinema">
+  <Catalog>
+    <Movie title="Drive" genre="Criminal" duration="100" release_year="2011">
+      <Description>cool movie</Description>
+      <Director name="Nicolas Winding Refn">
+        <Biography>Director of the film Drive</Biography>
+        </Director>
+      <Actors>
+        <Actor name="Ryan Gosling">
+          <Biography>Canadian actor</Biography>
+          </Actor>
+        </Actors>
+      <Comments>
+        <Comment user="Pashtet">Main character literally me</Comment>
+        <Comment user="Ne Pashtet">Boring</Comment>
+        </Comments>
+      </Movie>
+    </Catalog>
+  <Users>
+    <User username="Pashtet" email="pasha7788hh@gmail.com">
+      <FavoriteList>
+        <Movie title="Drive" />
+        </FavoriteList>
+      <Watchlist>
+        <Movie title="Drive" />
+        </Watchlist>
+      </User>
+    <User username="Ne Pashtet" email="NEpasha7788hh@gmail.com">
+      <FavoriteList />
+      <Watchlist>
+        <Movie title="Drive" />
+        </Watchlist>
+      </User>
+    </Users>
+  </Cinema>

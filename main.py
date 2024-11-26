@@ -1,7 +1,6 @@
 import json
 import xml.etree.ElementTree as ET
 
-
 class Cinema:
     def __init__(self, name):
         self.name = name
@@ -35,6 +34,8 @@ class Cinema:
             catalog_elem.append(movie.to_xml())
         for user in self.users:
             users_elem.append(user.to_xml())
+
+        indent(root)
 
         tree = ET.ElementTree(root)
         tree.write(file_path, encoding="utf-8", xml_declaration=True)
@@ -193,6 +194,20 @@ class Comment:
         comment_elem.text = self.text
         return comment_elem
 
+def indent(elem, level=0):
+    i = "\n" + "  " * level
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "  "
+        for child in elem:
+            indent(child, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    if level == 0 and (not elem.tail or not elem.tail.strip()):
+        elem.tail = "\n"
 
 cinema = Cinema("Online Cinema")
 director1 = Director("Nicolas Winding Refn", "Director of the film Drive")
@@ -204,10 +219,13 @@ user2 = User("Ne Pashtet", "NEpasha7788hh@gmail.com")
 movie1.add_actor(actor1)
 cinema.add_movie(movie1)
 cinema.add_user(user1)
+cinema.add_user(user2)
 
 user1.add_to_favorites(movie1)
 user1.comment_on_movie(movie1, "Main character literally me")
 user2.comment_on_movie(movie1, "Boring")
+user1.add_to_watchlist(movie1)
+user2.add_to_watchlist(movie1)
 
 cinema.to_json("cinema_data.json")
 cinema.to_xml("cinema_data.xml")
