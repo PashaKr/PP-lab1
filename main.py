@@ -22,8 +22,11 @@ class Cinema:
             "catalog": [movie.to_dict() for movie in self.catalog],
             "users": [user.to_dict() for user in self.users]
         }
-        with open(file_path, "w") as f:
-            json.dump(data, f, indent=4)
+        try:
+            with open(file_path, "w") as f:
+                json.dump(data, f, indent=4)
+        except IOError as e:
+            raise IOError(f"Failed to write to JSON file: {e}")
 
     def to_xml(self, file_path):
         root = ET.Element("Cinema", name=self.name)
@@ -37,8 +40,11 @@ class Cinema:
 
         indent(root)
 
-        tree = ET.ElementTree(root)
-        tree.write(file_path, encoding="utf-8", xml_declaration=True)
+        try:
+            tree = ET.ElementTree(root)
+            tree.write(file_path, encoding="utf-8", xml_declaration=True)
+        except IOError as e:
+            raise IOError(f"Failed to write to XML file: {e}")
 
 
 class Movie:
